@@ -1,0 +1,63 @@
+.home-main {
+    display: grid;
+    grid-template-areas:
+        'intro'
+        'description'
+        'pricing'
+        'promos';
+}
+.intro, .description, .pricing, .promos {
+    border: solid 1px red;
+}
+.intro {
+    grid-area: intro;
+    max-width: 500px;
+    margin: auto;
+}
+
+.description {
+    grid-area: description;
+    display: flex;
+    flex-direction: column;
+    padding: 48px;
+}
+
+.pricing {
+    grid-area: pricing;
+    padding: 48px;
+}
+
+.promos {
+    grid-area: promos;
+    display: none;
+}
+
+.promos ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Media queries */
+@media screen and (min-width: 768px) {
+    .home-main {
+        grid-template-columns: 80% 20%;
+        grid-template-areas:
+            'intro promos'
+            'description promos'
+            'pricing promos';
+    }
+
+    .promos {
+        display: flex;
+    }
+
+    .description {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+
+    }
+}
